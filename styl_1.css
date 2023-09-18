@@ -1,0 +1,62 @@
+* {
+    font-family: Helvetica;
+}
+
+body {
+    margin: 0;
+}
+
+header, footer {
+    background-color: #00838F;
+    padding: 5px;
+    font-size: 130%;
+    text-align: center;
+    color: white;
+    width: 100%;
+
+}
+
+#Lewo1, #Lewo2 {
+    background-color: #EFEFEF;
+    width: 55%;
+
+}
+
+#Lewo1 {
+    height: 150px;
+}
+
+#Lewo2 {
+    height: 300px;
+}
+
+#Prawo {
+    background-color: #4FB3BF;
+    width: 45%;
+    height: 450px;
+    text-align: center;
+
+}
+
+img {
+    
+}
+
+table, td, th {
+    border: solid  1px #4FB3BF;
+    border-collapse: collapse;
+}
+
+table {
+    margin: auto;
+    width: 80%;
+}
+
+td, th {
+    padding: 4px;
+}
+
+td:hover, th:hover {
+    background-color: #4FB3BF;
+}
+
