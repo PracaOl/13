@@ -53,8 +53,10 @@
         </table>
     </div>
     <div id="Prawo">
-        <img src="pliki1/ryba1.jpg" alt="Sum">
-        <a href="kwerendy.txt">Pobierz kwerendy</a>
+        <figure>
+            <img src="pliki1/ryba1.jpg" alt="Sum">
+            <figcaption><a href="kwerendy.txt">Pobierz kwerendy</a></figcaption>
+        </figure>
     </div>
     <footer>
         <p>Stonę wykonał: 13</p>
