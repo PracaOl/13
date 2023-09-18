@@ -1,3 +1,10 @@
+<?php 
+    $connection = mysqli_connect("localhost", "root", "", "wedkowanie");
+    $query = "SELECT id, nazwa, wystepowanie FROM ryby WHERE styl_zycia = 1;";
+    $result1 = $connection->query($query);
+    $query = "SELECT nazwa, wojewodztwo, akwen FROM `ryby` INNER JOIN lowisko ON ryby.id=lowisko.Ryby_id WHERE wystepowanie LIKE '%rzeki%'";
+    $result2 = $connection->query($query);
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,7 +20,14 @@
     <div id="Lewo1">
         <h3>Ryby zamieszkujące rzeki</h3>
         <ol>
-            
+                <?php
+                    while ($row = mysqli_fetch_assoc($result2))
+                    {
+                ?>
+                <li><?php echo $row['nazwa']; ?> pływa w rzece <?php echo $row['akwen']; ?>, <?php echo $row['wojewodztwo']; ?></li>
+                <?php
+                    }
+                ?>
         </ol>
     </div>
     <div id="Lewo2">
@@ -24,6 +38,18 @@
                 <th>Gatunek</th>
                 <th>Występowanie</th>
             </tr>
+            <?php
+                while ($row = mysqli_fetch_assoc($result1))
+                {
+            ?>
+            <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['nazwa']; ?></td>
+                    <td><?php echo $row['wystepowanie']; ?></td>
+            </tr>
+            <?php
+                    }
+            ?>
         </table>
     </div>
     <div id="Prawo">
@@ -35,3 +61,6 @@
     </footer>
 </body>
 </html>
+<?php 
+    $connection -> close();
+?>
